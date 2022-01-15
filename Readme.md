@@ -6,5 +6,5 @@ pip install mysqlclient
 
 export PATH=$PATH:/usr/local/mysql/bin
 
-export DYLD_LIBRARY_PATH=$PATH:/usr/local/mysql/lib
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib
 
