@@ -11,9 +11,9 @@ from rest_framework import routers
 from djoser import views as djoser_views
 
 if settings.DEBUG:
-    router = routers.DefaultRouter()
+    router = routers.DefaultRouter(trailing_slash=False)
 else:
-    router = routers.SimpleRouter()
+    router = routers.SimpleRouter(trailing_slash=False)
 
 router.register("users", djoser_views.UserViewSet)
 
