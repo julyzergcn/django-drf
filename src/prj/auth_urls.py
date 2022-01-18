@@ -1,3 +1,4 @@
+import os
 from collections import OrderedDict
 
 from django.urls import path, include
@@ -16,7 +17,7 @@ urlpatterns = [
     path('jwt/verify', TokenVerifyView.as_view(), name='jwt-verify'),
 ]
 
-if settings.DEBUG:
+if settings.DEBUG or os.environ.get('DJANGO_BROWSE_API', ''):
     urlpatterns += [
         path('', include('rest_framework.urls')),
         path('', APIRootView.as_view(
